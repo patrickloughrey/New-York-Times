@@ -8,6 +8,7 @@ var startYear;
 var endYear;
 
 $("#clearBtn").on("click", function (){
+    console.log("Button triggers");
     $("#searchTerm").val("");
     $("#numRecordsSelect").val("");
     $("#startYear").val("");
@@ -63,7 +64,7 @@ $("#searchBtn").on("click", function () {
          method: "GET"
     }).done(function(response) {
 
-        /* console.log(response); */
+        console.log(response); 
 
         $("#searchParam").empty().append($("<div>").addClass("col-sm-12").attr("id","indResults"));
 
@@ -114,7 +115,9 @@ $("#searchBtn").on("click", function () {
                                     .html(response.response.docs[i].byline.original))));
         }
 
-    }});
+      }
 
- });
+   });
+
+});
 
